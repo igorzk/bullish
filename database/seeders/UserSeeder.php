@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
             ->create([
             'name' => 'admin',
             'email' => 'admin@admin',
-            'password' => hash::make('change'),
+            'password' => hash::make('mudar'),
             'approved' => true
         ]);
     }

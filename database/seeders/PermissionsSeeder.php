@@ -16,13 +16,11 @@ class PermissionsSeeder extends Seeder
     {
         Permission::factory()->createMany([
             ['name' => 'admin'],
-            ['name' => 'can_view_files'],
-            ['name' => 'can_view_investors'],
-            ['name' => 'can_create_entity'],
-            ['name' => 'can_create_event'],
-            ['name' => 'can_create_account'],
-            ['name' => 'can_update_portfolios'],
-            ['name' => 'can_see_portfolio_results'],
+            ['name' => 'pode_ver_arquivos'],
+            ['name' => 'pode_ver_investidores'],
+            ['name' => 'pode_criar_entidades'],
+            ['name' => 'pode_criar_eventos'],
+            ['name' => 'pode_criar_contas'],
         ]);
         //
     }

@@ -50,14 +50,5 @@ class AuthServiceProvider extends ServiceProvider
             return $user->canCreateEvent();
         });
 
-        Gate::define('update-portfolios', function (User $user) {
-            return $user->canUpdatePortfolios();
-        });
-
-        Gate::define('see-portfolio-performance', function (User $user) {
-            return $user->canSeePortfolioPerformance();
-        });
-
-
     }
 }

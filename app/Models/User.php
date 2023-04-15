@@ -66,49 +66,35 @@ class User extends Authenticatable
     public function canViewFiles(): bool
     {
         return $this->permissions->contains(function ($value) {
-            return $value->name == 'can_view_files';
+            return $value->name == 'pode_ver_arquivos';
         });
     }
 
     public function canViewInvestors(): bool
     {
         return $this->permissions->contains(function ($value) {
-            return $value->name == 'can_view_investors';
+            return $value->name == 'pode_ver_investidores';
         });
     }
 
     public function canCreateEntity(): bool
     {
         return $this->permissions->contains(function ($value) {
-            return $value->name == 'can_create_entity';
+            return $value->name == 'pode_criar_entidades';
         });
     }
 
     public function canCreateEvent(): bool
     {
         return $this->permissions->contains(function ($value) {
-            return $value->name == 'can_create_event';
+            return $value->name == 'pode_criar_eventos';
         });
     }
 
     public function canCreateAccount(): bool
     {
         return $this->permissions->contains(function ($value) {
-            return $value->name == 'can_create_account';
-        });
-    }
-
-    public function canUpdatePortfolios(): bool
-    {
-        return $this->permissions->contains(function ($value) {
-            return $value->name == 'can_update_portfolios';
-        });
-    }
-
-    public function canSeePortfolioPerformance(): bool
-    {
-        return $this->permissions->contains(function ($value) {
-            return $value->name == 'can_see_portfolio_performance';
+            return $value->name == 'pode_criar_contas';
         });
     }
 }
