@@ -3,6 +3,9 @@
 use App\Http\Controllers\Auth\ApproveUserController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\UserPermissionController;
+use App\Http\Controllers\Entities\CustodianController;
+use App\Http\Controllers\Entities\InvestorController;
+use App\Http\Controllers\Entities\PortfolioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +37,16 @@ Route::middleware(['auth', 'approved'])->group(function () {
             Route::put('permissions/{user}', 'store' )->name('permissions.store');
         });
     });
+
+    Route::prefix('entities')->group(function () {
+        Route::resource('custodians', CustodianController::class)
+            ->except(["show", "edit"]);
+        Route::resource('investors', InvestorController::class)
+            ->except(["show", "edit"]);
+        Route::resource('portfolios', PortfolioController::class)
+            ->except(["show", "edit"]);
+    });
+
 });
 
 require __DIR__.'/auth.php';

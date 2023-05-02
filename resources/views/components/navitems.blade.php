@@ -1,4 +1,15 @@
 <ul class="navbar-nav">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white fw-bold" href="#" id="navbarDropdownMenuCadastros" role="button"
+           data-bs-toggle="dropdown" aria-expanded="false">
+            Cadastros
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuCadastros">
+            <li><a class="dropdown-item" href="{{ route('portfolios.index') }}">Carteiras</a></li>
+            <li><a class="dropdown-item" href="{{ route('investors.index') }}">Investidores</a></li>
+            <li><a class="dropdown-item" href="{{ route('custodians.index') }}">Corretoras</a></li>
+        </ul>
+    </li>
     <li class="nav-item">
         <a class="nav-link text-white fw-bold" href="{{ route('about') }}">
             <i class="fa-solid fa-circle-info fa-lg"></i>
