@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col d-flex justify-content-center">
                 <p class="card-text me-2">Quantidades de contas cadastradas:</p>
-                <p class="card-text">{{ 0 }}</p>
+                <p class="card-text">{{ $entity->custodyAccounts->count() }}</p>
             </div>
         </div>
         @php
@@ -30,7 +30,7 @@
         </button>
     </x-slot:buttonEdit>
     <x-slot:buttonDelete>
-        @if (0 === 0)
+        @if ($entity->custodyAccounts->count() === 0)
             <button class="btn btn-danger w-50" type="button" data-bs-toggle="modal"
                 data-bs-target="#modalDeletar{{ $entityId }}">
                 Deletar

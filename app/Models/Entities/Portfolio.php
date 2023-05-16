@@ -9,4 +9,5 @@ class Portfolio extends Model
 {
     use HasFactory;
     use HasEntityAttributes;
+    use HasCustodyAccounts;
 }

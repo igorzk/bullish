@@ -21,7 +21,7 @@ abstract class EntityController extends Controller
     {
         $class = $this->getModel();
         $modelName = $this->getModelName();
-        $entityCollection = $class::all();
+        $entityCollection = $class::with('custodyAccounts')->get();
 
         return view("entities.{$modelName}.index", compact("entityCollection"));
     }
@@ -71,8 +71,8 @@ abstract class EntityController extends Controller
     {
         Gate::authorize('create-entity');
         $class = $this->getModel();
-        $entity = $class::find($id);
-        if (0 == 0) {
+        $entity = $class::with('custodyAccounts')->find($id);
+        if ($entity->custodyAccounts->count() == 0) {
             $entity->delete();
             return back()->with('status', "Deletado com sucesso");
         } else {

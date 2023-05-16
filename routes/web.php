@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Accounts\CustodyAccountController;
 use App\Http\Controllers\Auth\ApproveUserController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\UserPermissionController;
@@ -47,6 +48,10 @@ Route::middleware(['auth', 'approved'])->group(function () {
             ->except(["show", "edit"]);
     });
 
+    Route::prefix('accounts')->group(function () {
+        Route::resource('custody', CustodyAccountController::class)
+            ->except(["show"]);
+    });
 });
 
 require __DIR__.'/auth.php';

@@ -8,6 +8,7 @@
             <li><a class="dropdown-item" href="{{ route('portfolios.index') }}">Carteiras</a></li>
             <li><a class="dropdown-item" href="{{ route('investors.index') }}">Investidores</a></li>
             <li><a class="dropdown-item" href="{{ route('custodians.index') }}">Corretoras</a></li>
+            <li><a class="dropdown-item" href="{{ route('custody.index') }}">Contas de Custódia</a></li>
         </ul>
     </li>
     <li class="nav-item">

@@ -9,4 +9,5 @@ class Custodian extends Model
 {
     use HasFactory;
     use HasEntityAttributes;
+    use HasCustodyAccounts;
 }

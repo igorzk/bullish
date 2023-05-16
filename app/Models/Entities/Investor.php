@@ -11,6 +11,7 @@ class Investor extends Model
 {
     use HasFactory;
     use HasEntityAttributes;
+    use HasCustodyAccounts;
 
     public function nickname(): Attribute
     {
