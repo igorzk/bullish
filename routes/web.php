@@ -7,6 +7,8 @@ use App\Http\Controllers\Auth\UserPermissionController;
 use App\Http\Controllers\Entities\CustodianController;
 use App\Http\Controllers\Entities\InvestorController;
 use App\Http\Controllers\Entities\PortfolioController;
+use App\Http\Controllers\Events\BovConfirmationsController;
+use App\Http\Controllers\Reporting\StockPortfoliosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,6 +53,15 @@ Route::middleware(['auth', 'approved'])->group(function () {
     Route::prefix('accounts')->group(function () {
         Route::resource('custody', CustodyAccountController::class)
             ->except(["show"]);
+    });
+
+    Route::prefix('documents')->group(function () {
+        Route::resource('bov-confirmations', BovConfirmationsController::class)
+            ->except(['show', 'edit']);
+    });
+    Route::prefix('reports')->group(function () {
+        Route::resource('portfolio-quantities', StockPortfoliosController::class)
+            ->only('index');
     });
 });
 

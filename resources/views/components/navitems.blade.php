@@ -11,6 +11,24 @@
             <li><a class="dropdown-item" href="{{ route('custody.index') }}">Contas de Custódia</a></li>
         </ul>
     </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white fw-bold" href="#" id="navbarDropdownMenuDocumentos" role="button"
+           data-bs-toggle="dropdown" aria-expanded="false">
+            Documentos
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuDocumentos">
+            <li><a class="dropdown-item" href="{{ route('bov-confirmations.index') }}">Nota de Corretagem - BOV</a></li>
+        </ul>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white fw-bold" href="#" id="navbarDropdownMenuDocumentos" role="button"
+           data-bs-toggle="dropdown" aria-expanded="false">
+            Relatórios
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuDocumentos">
+            <li><a class="dropdown-item" href="{{ route('portfolio-quantities.index') }}">Estoque Ações</a></li>
+        </ul>
+    </li>
     <li class="nav-item">
         <a class="nav-link text-white fw-bold" href="{{ route('about') }}">
             <i class="fa-solid fa-circle-info fa-lg"></i>

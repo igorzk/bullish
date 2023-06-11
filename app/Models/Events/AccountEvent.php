@@ -26,11 +26,6 @@ class AccountEvent extends Model
         return $query->where('type', 'bov');
     }
 
-    public function scopeContribution($query)
-    {
-        return $query->where('type', 'contribution');
-    }
-
     public function custodyAccount(): belongsTo
     {
         return $this->belongsTo(CustodyAccount::class);
